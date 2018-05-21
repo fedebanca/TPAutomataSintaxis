@@ -2,16 +2,17 @@
 
 int matrizDelAutomata[7][6] ={{2,1,1,6,6,6},{1,1,1,6,6,6},{3,3,6,6,4,6},{3,3,6,6,6,6},{5,5,5,5,6,6},{5,5,5,5,6,6},{6,6,6,6,6,6}};
 
-int automata (char palabra[10])
+int automata (char palabra[20])
 {
+
 	int estado = 0;
 	int columna;
 	int posicionEnPalabra =0;
 	do{
-	   columna = darColumna(palabra[posicionEnPalabra]);
-	   estado = matrizDelAutomata[estado][columna];
+	    columna = darColumna(palabra[posicionEnPalabra]);
+	    estado = matrizDelAutomata[estado][columna];
 		posicionEnPalabra ++;
-	}while(estado != 6);
+	}while(estado != 6 || posicionEnPalabra < 20 || palabra[posicionEnPalabra] == '\n' );
 	return (estado);
 }
 
